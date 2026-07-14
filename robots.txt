@@ -1,0 +1,8 @@
+# robots.txt for GREEN DISPLAY
+# https://www.greenecodisplay.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.greenecodisplay.com/sitemap.xml
