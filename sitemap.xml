@@ -124,6 +124,26 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/es/news.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/news.html"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/ar/news.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/news.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/news.html"/>
   </url>
   <url>
@@ -131,6 +151,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/es/blog/hidden-costs-cheap-metal-display-furniture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/ar/blog/hidden-costs-cheap-metal-display-furniture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/hidden-costs-cheap-metal-display-furniture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/hidden-costs-cheap-metal-display-furniture"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/hidden-costs-cheap-metal-display-furniture"/>
   </url>
   <url>
@@ -138,6 +178,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/es/blog/custom-metal-display-furniture-project-challenges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
+  </url>
+  <url>
+    <loc>https://www.greenecodisplay.com/ar/blog/custom-metal-display-furniture-project-challenges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.greenecodisplay.com/es/blog/custom-metal-display-furniture-project-challenges"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.greenecodisplay.com/ar/blog/custom-metal-display-furniture-project-challenges"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenecodisplay.com/blog/custom-metal-display-furniture-project-challenges"/>
   </url>
 
