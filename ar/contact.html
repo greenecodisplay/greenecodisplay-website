@@ -76,8 +76,10 @@
       <div class="contact-form">
         <h2 style="color:var(--color-primary);margin-bottom:24px;">إرسال استفسار</h2>
         <div id="formSuccess" style="display:none;margin-bottom:20px;"></div>
-        <!-- REPLACE: Formspree ID - Replace 'your_id' with your actual Formspree form ID -->
-        <form id="contactForm" action="https://formspree.io/f/your_id" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="5ed06143-4c92-4fcf-9896-378a33c013ce">
+          <input type="hidden" name="subject" value="استفسار من الموقع - GREEN DISPLAY">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;">
           <div class="form-group">
             <label for="name">الاسم *</label>
             <input type="text" id="name" name="name" placeholder="اسمك الكامل" required>

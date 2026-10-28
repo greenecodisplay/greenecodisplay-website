@@ -73,6 +73,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ===== 询盘表单：真实提交 + 三语文案 =====
+  const FORM_MSG = {
+    en: {
+      sending: 'Sending...',
+      success: 'Thank you! Your inquiry has been sent. We will contact you within 24 hours.',
+      error: 'Sorry, something went wrong. Please email us directly at info@greenecodisplay.com'
+    },
+    es: {
+      sending: 'Enviando...',
+      success: '&#161;Gracias! Su consulta ha sido enviada. Le contactaremos dentro de 24 horas.',
+      error: 'Lo sentimos, algo sali&#243; mal. Por favor env&#237;enos un correo directamente a info@greenecodisplay.com'
+    },
+    ar: {
+      sending: 'جارٍ الإرسال...',
+      success: 'شكرًا لك! تم إرسال استفسارك. سنتواصل معك خلال 24 ساعة.',
+      error: 'حدث خطأ ما. يُرجى مراسلتنا مباشرة على info@greenecodisplay.com'
+    }
+  };
+
+  function showFormMessage(type, msg) {
+    const box = document.querySelector('#formSuccess');
+    if (!box) return;
+    const ok = type === 'success';
+    box.style.display = 'block';
+    box.innerHTML = '<p style="color:' + (ok ? '#2E7D32' : '#c62828') +
+      ';font-weight:600;padding:16px;background:' + (ok ? '#e8f5e9' : '#fdecea') +
+      ';border-radius:8px;">' + msg + '</p>';
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
   // ===== Contact Form Validation =====
   const contactForm = document.querySelector('#contactForm');
   if (contactForm) {
@@ -90,23 +120,35 @@ document.addEventListener('DOMContentLoaded', function() {
       if (message && !message.value.trim()) { showError(message, 'Message is required'); valid = false; } else clearError(message);
 
       if (valid) {
-        // Show success message
-        const successDiv = document.querySelector('#formSuccess');
-        if (successDiv) {
-          successDiv.style.display = 'block';
-          successDiv.innerHTML = '<p style="color:#2E7D32;font-weight:600;padding:16px;background:#e8f5e9;border-radius:8px;">Thank you! Your inquiry has been submitted. We will contact you within 24 hours.</p>';
-        }
-        contactForm.reset();
-        // If Formspree is configured, actually submit
+        const lang = (document.documentElement.lang || 'en').slice(0, 2);
+        const msg = FORM_MSG[lang] || FORM_MSG.en;
         const action = contactForm.getAttribute('action');
-        if (action && action.indexOf('formspree.io') > -1 && action.indexOf('your_id') === -1) {
-          // Submit to Formspree via fetch
-          const formData = new FormData(contactForm);
-          fetch(action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-            .then(res => res.json())
-            .then(data => console.log('Form submitted:', data))
-            .catch(err => console.error('Form error:', err));
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const btnText = btn ? btn.textContent : '';
+
+        // 未配置真实接口时不许谎报成功
+        if (!action || action.indexOf('your_id') > -1) {
+          showFormMessage('error', msg.error);
+          return;
         }
+
+        const formData = new FormData(contactForm);
+        if (btn) { btn.disabled = true; btn.textContent = msg.sending; }
+
+        fetch(action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            if (data && data.success) {
+              showFormMessage('success', msg.success);
+              contactForm.reset();
+            } else {
+              showFormMessage('error', msg.error);
+            }
+          })
+          .catch(function() { showFormMessage('error', msg.error); })
+          .then(function() {
+            if (btn) { btn.disabled = false; btn.textContent = btnText; }
+          });
       }
     });
   }
