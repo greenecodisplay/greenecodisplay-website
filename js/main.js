@@ -141,11 +141,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data && data.success) {
               showFormMessage('success', msg.success);
               contactForm.reset();
+              track('generate_lead', { language: lang, form_location: 'contact_page' });
             } else {
               showFormMessage('error', msg.error);
+              track('form_submit_error', { language: lang, reason: 'api_rejected' });
             }
           })
-          .catch(function() { showFormMessage('error', msg.error); })
+          .catch(function() {
+            showFormMessage('error', msg.error);
+            track('form_submit_error', { language: lang, reason: 'network' });
+          })
           .then(function() {
             if (btn) { btn.disabled = false; btn.textContent = btnText; }
           });
@@ -190,6 +195,28 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  // ===== Analytics Helpers (GA4) =====
+  // gtag 未加载（被拦截/未注入）时静默跳过，不影响页面功能
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
+  // 追踪客户改用 WhatsApp / 邮件 / 电话直接联系
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest && e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (href.indexOf('wa.me') > -1) {
+      track('contact_whatsapp', { link_text: (link.textContent || '').trim().slice(0, 40) });
+    } else if (href.indexOf('mailto:') === 0) {
+      track('contact_email', { link_text: (link.textContent || '').trim().slice(0, 40) });
+    } else if (href.indexOf('tel:') === 0) {
+      track('contact_phone', { link_text: (link.textContent || '').trim().slice(0, 40) });
+    }
+  }, true);
 
   // ===== Smooth Scroll for Anchor Links =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
